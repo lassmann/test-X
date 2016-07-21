@@ -20,7 +20,7 @@ angular.module("ascii-warehouse", [])
                 return self.result;
             }
         }).then(function successCallback(response) {
-            console.log(response.data);
+            $scope.data = response.data;
             // this callback will be called asynchronously
             // when the response is available
         }, function errorCallback(response) {
