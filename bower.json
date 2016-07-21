@@ -1,0 +1,14 @@
+{
+  "name": "discount-ascii-warehouse",
+  "description": "For all your ascii needs.",
+  "main": "index.js",
+  "authors": [
+    "l.assmann@gmail.com"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "^1.5.7",
+    "angular-bootstrap": "^2.0.0"
+  }
+}
