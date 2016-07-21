@@ -3,20 +3,17 @@
     <head>
         <title>Discount Ascii Warehouse</title>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
+
     </head>
     <body ng-app="ascii-warehouse" ng-controller="mainCtrl">
         <header>
             <h1>Discount Ascii Warehouse</h1>
-
             <p>Here you're sure to find a bargain on some of the finest ascii available to purchase. Be sure to peruse our selection of ascii faces in an exciting range of sizes and prices.</p>
-
             <p>But first, a word from our sponsors:</p> <script>document.write('<img class="ad" src="/ad/?r=' + Math.floor(Math.random()*1000) + '"/>');</script>
         </header>
-        <ul>
-            <li ng-repeat="x in products">{{x}}</li>
-        </ul>
+
         <section class="products">
-            ... products go here ...
+
         </section>
     </body>
     <script src="app.js"></script>
