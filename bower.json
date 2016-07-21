@@ -9,6 +9,7 @@
   "private": true,
   "dependencies": {
     "angular": "^1.5.7",
-    "angular-bootstrap": "^2.0.0"
+    "angular-bootstrap": "^2.0.0",
+    "angular-smart-table": "^2.1.8"
   }
 }

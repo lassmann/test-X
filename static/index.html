@@ -3,18 +3,33 @@
     <head>
         <title>Discount Ascii Warehouse</title>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
-
+        <script src="bower_components/angular-smart-table/dist/smart-table.js"></script>
     </head>
     <body ng-app="ascii-warehouse" ng-controller="mainCtrl">
         <header>
             <h1>Discount Ascii Warehouse</h1>
-            <p>Here you're sure to find a bargain on some of the finest ascii available to purchase. Be sure to peruse our selection of ascii faces in an exciting range of sizes and prices.</p>
-            <p>But first, a word from our sponsors:</p> <script>document.write('<img class="ad" src="/ad/?r=' + Math.floor(Math.random()*1000) + '"/>');</script>
         </header>
 
         <section class="products">
-            {{data}}
+            <table st-table="rowCollection" class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Size</th>
+                    <th>Price</th>
+                    <th>Face</th>
+                    <th>Date</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="row in products">
+                    <td>{{row.size}}</td>
+                    <td>{{row.price}}</td>
+                    <td>{{row.face}}</td>
+                    <td>{{row.date}}</td>
+                </tr>
+                </tbody>
+            </table>
         </section>
     </body>
-    <script src="app.js"></script>
+    <script src="js/app.js"></script>
 </html>

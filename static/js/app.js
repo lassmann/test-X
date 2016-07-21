@@ -1,9 +1,9 @@
-angular.module("ascii-warehouse", [])
+angular.module("ascii-warehouse", ['smart-table'])
     .controller("mainCtrl", function($scope, $http) {
         $http({
             headers: {"Accept":"application/json"},
             method: 'GET',
-            url: '/api/products',
+            url: '/api/products?limit=15',
             transformResponse: function Transformer(raw) {
                 var self = this;
                 self.result = [];
@@ -20,7 +20,8 @@ angular.module("ascii-warehouse", [])
                 return self.result;
             }
         }).then(function successCallback(response) {
-            $scope.data = response.data;
+            $scope.products = response.data;
+            console.log("dasda",response.data.length);
             // this callback will be called asynchronously
             // when the response is available
         }, function errorCallback(response) {
