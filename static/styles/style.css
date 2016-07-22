@@ -4,6 +4,7 @@ body{
         background-position: center 100px;
         background-size: 650px 500px;
 }
-header{
+#navbar{
+    text-align: center;
     background-color:#F54E45;
 }
