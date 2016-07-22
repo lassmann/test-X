@@ -21,12 +21,7 @@ angular.module("ascii-warehouse", ['smart-table'])
             }
         }).then(function successCallback(response) {
             $scope.products = response.data;
-            console.log("dasda",response.data.length);
-            // this callback will be called asynchronously
-            // when the response is available
-        }, function errorCallback(response) {
-            console.log(response);
-            // called asynchronously if an error occurs
-            // or server returns response with an error status.
+        }, function errorCallback(err) {
+            console.log(err.message);
         });
     });
