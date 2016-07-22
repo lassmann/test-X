@@ -1,0 +1,9 @@
+body{
+        background: url("../assets/image.jpg");
+        background-repeat: no-repeat;
+        background-position: center 100px;
+        background-size: 650px 500px;
+}
+header{
+    background-color:#F54E45;
+}

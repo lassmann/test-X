@@ -1,4 +1,4 @@
-angular.module("ascii-warehouse", ['smart-table'])
+angular.module("ascii-warehouse", ['smart-table', 'ui.bootstrap'])
     .controller("mainCtrl", function($scope, $http) {
         $http({
             headers: {"Accept":"application/json"},
