@@ -1,5 +1,10 @@
 app.factory('Products', function ($http, $q) {
-    return $q(function (resolve, reject) {
+    return {
+        getAll: getAll
+    };
+
+    function getAll() {
+        var deferred = $q.defer();
         $http({
             method: 'GET',
             url: '/api/products?limit=15',
@@ -18,10 +23,11 @@ app.factory('Products', function ($http, $q) {
                 });
                 return self.result;
             }
-        }).then(function successCallback(response) {
-            resolve(response);
+        }).then(function successCallback(products) {
+            deferred.resolve(products.data);
         }, function errorCallback(err) {
-            reject(err.message)
+            deferred.reject(err.message);
         });
-    });
+        return deferred.promise;
+    }
 });
