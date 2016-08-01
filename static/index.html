@@ -14,15 +14,15 @@
             <table st-table="rowCollection" class="table table-striped">
                 <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Size</th>
-                    <th>Price</th>
+                    <th ng-click="type='id'; bool=!bool">ID</th>
+                    <th ng-click="type='size'; bool=!bool">Size</th>
+                    <th ng-click="type='price'; bool=!bool">Price</th>
                     <th>Face</th>
                     <th>Date</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr ng-repeat="row in products">
+                <tr ng-repeat="row in products | orderBy:type:bool">
                     <td>{{row.id}}</td>
                     <td>{{row.size | px}}</td>
                     <td>{{row.price | currency}}</td>
