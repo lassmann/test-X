@@ -10,7 +10,10 @@
     <div id="navbar" class="navbar-collapse collapse">
         <h1>Discount Ascii Warehouse</h1>
     </div>
-        <section class="products">
+    <section ng-if="loading">
+        <img src="assets/Loading_icon.gif" class="ajax-loader"/>
+    </section>
+        <section ng-if="!loading" class="products">
             <table st-table="rowCollection" class="table table-striped">
                 <thead>
                 <tr>
