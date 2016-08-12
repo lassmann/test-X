@@ -1,5 +1,5 @@
 app.factory('Products', function ($http, $q) {
-    function getAll(skip) {
+    function getProducts(skip) {
         var deferred = $q.defer();
         $http({
             method: 'GET',
@@ -27,6 +27,6 @@ app.factory('Products', function ($http, $q) {
         return deferred.promise;
     }
     return {
-        getAll: getAll
+        getProducts: getProducts
     };
 });
