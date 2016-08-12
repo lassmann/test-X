@@ -1,13 +1,9 @@
 app.factory('Products', function ($http, $q) {
-    return {
-        getAll: getAll
-    };
-
-    function getAll() {
+    function getAll(skip) {
         var deferred = $q.defer();
         $http({
             method: 'GET',
-            url: '/api/products?limit=45',
+            url: '/api/products?limit=30&skip=' + skip,
             transformResponse: function Transformer(raw) {
                 var self = this;
                 self.result = [];
@@ -30,4 +26,7 @@ app.factory('Products', function ($http, $q) {
         });
         return deferred.promise;
     }
+    return {
+        getAll: getAll
+    };
 });
