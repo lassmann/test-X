@@ -7,7 +7,7 @@ app.factory('Products', function ($http, $q) {
         var deferred = $q.defer();
         $http({
             method: 'GET',
-            url: '/api/products?limit=40',
+            url: '/api/products?limit=45',
             transformResponse: function Transformer(raw) {
                 var self = this;
                 self.result = [];

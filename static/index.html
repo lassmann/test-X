@@ -1,48 +1,49 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Discount Ascii Warehouse</title>
-        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
-        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css">
-        <link rel="stylesheet" href="styles/style.css">
-    </head>
-    <body ng-app="ascii-warehouse" ng-controller="mainCtrl" >
-    <div id="navbar" class="navbar-collapse collapse">
-        <h1>Discount Ascii Warehouse</h1>
-    </div>
-    <section ng-if="loading">
-        <img src="assets/Loading_icon.gif" class="ajax-loader"/>
-    </section>
-        <section ng-if="!loading" class="products">
-            <table st-table="rowCollection" class="table table-striped">
-                <thead>
-                <tr>
-                    <th ng-click="type='id'; bool=!bool">ID</th>
-                    <th ng-click="type='size'; bool=!bool">Size</th>
-                    <th ng-click="type='price'; bool=!bool">Price</th>
-                    <th>Face</th>
-                    <th>Date</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr ng-repeat="row in products | orderBy:type:bool">
-                    <td>{{row.id}}</td>
-                    <td>{{row.size | px}}</td>
-                    <td>{{row.price | currency}}</td>
-                    <td>{{row.face}}</td>
-                    <td>{{row.date | date}}</td>
-                </tr>
-                </tbody>
-            </table>
-        </section>
-    </body>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
-    <script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
-    <script src="bower_components/angular-smart-table/dist/smart-table.js"></script>
-    <script src="bower_components/moment/moment.js"></script>
-    <script src="bower_components/angular-moment/angular-moment.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/filters/pixel.js"></script>
-    <script src="js/filters/date.js"></script>
-    <script src="js/factories/products.js"></script>
+<head>
+    <title>Discount Ascii Warehouse</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body ng-app="ascii-warehouse" ng-controller="mainCtrl" >
+<div id="navbar" class="navbar-collapse collapse">
+    <h1>Discount Ascii Warehouse</h1>
+</div>
+<section ng-if="loading">
+    <img src="assets/Loading_icon.gif" class="ajax-loader"/>
+</section>
+<section ng-if="!loading" class="products" >
+        <table st-table="rowCollection" class="table table-striped" scrolled="loadMoreAscii()">
+            <thead>
+            <tr>
+                <th ng-click="type='id'; bool=!bool">ID</th>
+                <th ng-click="type='size'; bool=!bool">Size</th>
+                <th ng-click="type='price'; bool=!bool">Price</th>
+                <th>Face</th>
+                <th>Date</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="row in products | orderBy:type:bool">
+                <td>{{row.id}}</td>
+                <td>{{row.size | px}}</td>
+                <td>{{row.price | currency}}</td>
+                <td>{{row.face}}</td>
+                <td>{{row.date | date}}</td>
+            </tr>
+            </tbody>
+        </table>
+</section>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+<script src="bower_components/angular-smart-table/dist/smart-table.js"></script>
+<script src="bower_components/moment/moment.js"></script>
+<script src="bower_components/angular-moment/angular-moment.js"></script>
+<script src="js/app.js"></script>
+<script src="js/filters/pixel.js"></script>
+<script src="js/filters/date.js"></script>
+<script src="js/factories/products.js"></script>
+<script src="js/directives/scroll.js"></script>
 </html>
