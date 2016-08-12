@@ -10,4 +10,5 @@ var app = angular.module("ascii-warehouse", ['smart-table', 'ui.bootstrap', 'ang
         $scope.loadMoreAscii = function (){
             console.log("entre bien por la funcion" );
         }
+        $scope.addMore
     });
