@@ -23,12 +23,12 @@
             <th ng-click="type='price'; bool=!bool">Price</th>
             <th>Face</th>
             <th>Date</th>
+            <th>Advertisement</th>
         </tr>
         </thead>
         <tbody>
-        <tr ng-repeat="row in products | orderBy:type:bool">
+        <tr ng-repeat="row in products | orderBy:type:bool track by $index">
 
-            {{$index}}
             <td>{{row.id}}</td>
             <td>{{row.size | px}}</td>
             <td>{{row.price | currency}}</td>
