@@ -23,7 +23,6 @@
             <th ng-click="type='price'; bool=!bool">Price</th>
             <th>Face</th>
             <th>Date</th>
-
         </tr>
         </thead>
         <tbody>
@@ -38,7 +37,11 @@
         </tbody>
     </table>
 </section>
+<footer >
+    <div ng-if="finish"> Not More Items</div>
+    <img  ng-if="loadingMore" src="assets/Loading_icon.gif" class="ajax-loader"/>
 
+</footer>
 </body>
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>

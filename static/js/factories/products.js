@@ -1,9 +1,9 @@
 app.factory('Products', function ($http, $q) {
-    function getProducts(skip) {
+    function getProducts(from, quantity) {
         var deferred = $q.defer();
         $http({
             method: 'GET',
-            url: '/api/products?limit=30&skip=' + skip,
+            url: '/api/products?limit='+ quantity +'&skip=' + from,
             transformResponse: function Transformer(raw) {
                 var self = this;
                 self.result = [];
