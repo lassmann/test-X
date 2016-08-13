@@ -1,13 +1,18 @@
 var app = angular.module("ascii-warehouse", ['smart-table', 'ui.bootstrap', 'angularMoment'])
     .controller("mainCtrl", function ($scope, $http, Products) {
         $scope.loading = true;
-        Products.getProducts(0)
-            .then(function (products) {
-                $scope.products = products;
-                $scope.loading = false;
-            });
+        $scope.init = init;
+        $scope.loadMoreAscii = loadMoreAscii;
 
-        $scope.loadMoreAscii = function () {
+        function init() {
+            Products.getProducts(0)
+                .then(function (products) {
+                    $scope.products = products;
+                    $scope.loading = false;
+                });
+        }
+        
+        function loadMoreAscii() {
             Products.getProducts(31)
                 .then(function (products) {
                     products.forEach(function (prod) {
@@ -15,5 +20,7 @@ var app = angular.module("ascii-warehouse", ['smart-table', 'ui.bootstrap', 'ang
                     });
                 });
         }
+
+        $scope.init()
 
     });

@@ -26,6 +26,7 @@ app.factory('Products', function ($http, $q) {
         });
         return deferred.promise;
     }
+
     return {
         getProducts: getProducts
     };

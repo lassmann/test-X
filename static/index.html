@@ -14,7 +14,6 @@
 <section ng-if="loading">
     <img src="assets/Loading_icon.gif" class="ajax-loader"/>
 </section>
-
 <section ng-if="!loading" class="products">
     <table st-table="rowCollection" class="table table-striped" scrolled="loadMoreAscii()">
         <thead>
@@ -28,6 +27,8 @@
         </thead>
         <tbody>
         <tr ng-repeat="row in products | orderBy:type:bool">
+
+            {{$index}}
             <td>{{row.id}}</td>
             <td>{{row.size | px}}</td>
             <td>{{row.price | currency}}</td>
