@@ -1,6 +1,6 @@
 var app = angular.module("ascii-warehouse", ['smart-table', 'ui.bootstrap', 'angularMoment'])
     .controller("mainCtrl", function ($scope, $http, Products) {
-        $scope.loadingPage = true;
+        $scope.loading = true;
         $scope.loadingMore = false;
         $scope.init = init;
         $scope.loadMoreAscii = loadMoreAscii;

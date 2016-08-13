@@ -8,3 +8,8 @@ body{
     text-align: center;
     background-color:#F54E45;
 }
+
+.loader{
+    background: url("../assets/Loading_icon.gif") no-repeat center center;
+    height: 100%;
+}
