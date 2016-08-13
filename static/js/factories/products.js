@@ -28,6 +28,6 @@ app.factory('Products', function ($http, $q) {
     }
 
     return {
-        getProducts: getProducts
+        getProducts: getProducts,
     };
 });
