@@ -16,31 +16,27 @@
     <img src="assets/Loading_icon.gif" class="ajax-loader"/>
 </section>
 <section ng-if="!loading" class="products">
-    <table st-table="rowCollection" class="table table-striped" scrolled="loadMoreAscii()">
-        <thead>
-        <tr>
-            <th ng-click="type='id'; bool=!bool">ID</th>
-            <th ng-click="type='size'; bool=!bool">Size</th>
-            <th ng-click="type='price'; bool=!bool">Price</th>
-            <th>Face</th>
-            <th>Date</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr ng-repeat="row in products | orderBy:type:bool track by $index">
 
-            <td>{{row.id}}</td>
-            <td>{{row.size | px}}</td>
-            <td>{{row.price | currency}}</td>
-            <td>{{row.face}}</td>
-            <td>{{row.date | date}}</td>
-        </tr>
-        </tbody>
-    </table>
+    <div class="container-fluid" style="padding: 0 15px;">
+        <div class="row" scrolled="loadMoreAscii()">
+            <div ng-repeat="row in products | orderBy:type:bool track by $index">
+                <div class="col-xs-4" style="background-color: #c2c2c2; border: 1px solid black; ">
+                    <div>{{row.id}}</div>
+                    <div>{{row.size | px}}</div>
+                    <div>{{row.price | currency}}</div>
+                    <div>{{row.face}}</div>
+                    <div>{{row.date | date}}</div>
+                </div>
+                <div class="col-xs-4" ng-if="($index + 1) % 20 === 0">
+                    <img ng-src="/ad/?r={{ $index *  randomAdv}}" alt="advertisment">
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
-<footer >
+<footer>
     <div ng-if="finish"> Not More Items</div>
-    <img  ng-if="loadingMore" src="assets/Loading_icon.gif" class="ajax-loader"/>
+    <img ng-if="loadingMore" src="assets/Loading_icon.gif" class="ajax-loader"/>
 </footer>
 </body>
 

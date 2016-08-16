@@ -6,6 +6,7 @@ var app = angular.module("ascii-warehouse", ['smart-table', 'ui.bootstrap', 'ang
         $scope.loadMoreAscii = loadMoreAscii;
         $scope.products = '';
         $scope.finish = false;
+        $scope.randomAdv = Math.floor(Math.random()*1000);
 
 
         function init() {
