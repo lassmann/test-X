@@ -22,8 +22,10 @@ body {
 }
 
 .products {
+    text-align: center;
     background-color: #c2c2c2;
     border: 1px solid black;
     margin: 10px;
-    width: 300px;
+    width: 230px;
+    height: 140px;
 }
