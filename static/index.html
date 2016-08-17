@@ -30,7 +30,7 @@
                     <div>{{row.id}}</div>
                     <div>{{row.size | px}}</div>
                     <div>{{row.price | currency}}</div>
-                    <div><span>{{row.face}}</span></div>
+                    <div><span dynamic-size="{{row.size}}">{{row.face}}</span></div>
                     <div>{{row.date | date}}</div>
                 </div>
                 <div class="col-xs-4" ng-if="($index + 1) % 20 === 0">
@@ -56,4 +56,6 @@
 <script src="js/filters/date.js"></script>
 <script src="js/factories/products.js"></script>
 <script src="js/directives/scroll.js"></script>
+<script src="js/directives/dynamicSize.js"></script>
+
 </html>
