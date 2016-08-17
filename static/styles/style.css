@@ -31,10 +31,12 @@ body {
     height: 140px;
 }
 
-
-
 img.advertisement{
     position: relative;
     height: 140px;
     width: 230px;
+}
+
+.order-by{
+    width: 225px;
 }
