@@ -1,24 +1,27 @@
-body{
-        background: url("../assets/image.jpg");
-        background-repeat: no-repeat;
-        background-position: center 100px;
-        background-size: 650px 500px;
-}
-#navbar{
-    text-align: center;
-    background-color:#437DCC;
+body {
+    background: url("../assets/image.jpg");
+    background-repeat: no-repeat;
+    background-position: center 100px;
+    background-size: 650px 500px;
+    font-family: 'Raleway', sans-serif;
 }
 
-.loader{
+#navbar {
+    text-align: center;
+    background-color: #437DCC;
+}
+
+.loader {
     background: url("../assets/Loading_icon.gif") no-repeat center center;
     height: 100%;
 }
 
-#page-title{
+#page-title {
+    font-size: 30px;
     height: 40px;
 }
 
-.products{
+.products {
     background-color: #c2c2c2;
     border: 1px solid black;
     margin: 10px;

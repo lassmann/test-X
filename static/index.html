@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css">
     <link rel="stylesheet" href="styles/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
 </head>
 <body ng-app="ascii-warehouse" ng-controller="mainCtrl">
@@ -17,8 +18,8 @@
 </section>
 <section ng-if="!loading" class="container">
     <div class="container-fluid" >
-        <span>Order By</span>
-        <select name="orderBy" ng-model="type" class="form-control order-by">
+        <label for="orderBy">Order By</label>
+        <select id="orderBy" ng-model="type" class="form-control order-by">
             <option value="">Select</option>
             <option value="size">Size</option>
             <option value="price">Prize</option>
@@ -26,7 +27,7 @@
         </select>
         <div class="row" scrolled="loadMoreAscii()">
             <div ng-repeat="row in products | orderBy:type:bool track by $index">
-                <div class="col-sm-4 products">
+                <div class="col-sm-3 products">
                     <div>{{row.id}}</div>
                     <div>{{row.size | px}}</div>
                     <div>{{row.price | currency}}</div>
