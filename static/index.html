@@ -16,11 +16,16 @@
     <img src="assets/Loading_icon.gif" class="ajax-loader"/>
 </section>
 <section ng-if="!loading" class="products">
-
+    <span>Order By</span>
+    <select name="orderBy" ng-model="type">
+        <option value="size">Size</option>
+        <option value="price">Prize</option>
+        <option value="id">ID</option>
+    </select>
     <div class="container-fluid" style="padding: 0 15px;">
         <div class="row" scrolled="loadMoreAscii()">
             <div ng-repeat="row in products | orderBy:type:bool track by $index">
-                <div class="col-xs-4" style="background-color: #c2c2c2; border: 1px solid black; ">
+                <div class="col-sm-4" style="background-color: #c2c2c2; border: 1px solid black; ">
                     <div>{{row.id}}</div>
                     <div>{{row.size | px}}</div>
                     <div>{{row.price | currency}}</div>
