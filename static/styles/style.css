@@ -6,10 +6,21 @@ body{
 }
 #navbar{
     text-align: center;
-    background-color:#F54E45;
+    background-color:#437DCC;
 }
 
 .loader{
     background: url("../assets/Loading_icon.gif") no-repeat center center;
     height: 100%;
+}
+
+#page-title{
+    height: 40px;
+}
+
+.products{
+    background-color: #c2c2c2;
+    border: 1px solid black;
+    margin: 10px;
+    width: 300px;
 }

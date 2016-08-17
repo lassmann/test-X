@@ -9,27 +9,28 @@
 </head>
 <body ng-app="ascii-warehouse" ng-controller="mainCtrl">
 <div id="navbar" class="navbar-collapse collapse">
-    <h1>Discount Ascii Warehouse</h1>
+    <div id="page-title">Discount Ascii Warehouse</div>
 </div>
 
 <section ng-if="loading">
     <img src="assets/Loading_icon.gif" class="ajax-loader"/>
 </section>
-<section ng-if="!loading" class="products">
-    <span>Order By</span>
-    <select name="orderBy" ng-model="type">
-        <option value="size">Size</option>
-        <option value="price">Prize</option>
-        <option value="id">ID</option>
-    </select>
-    <div class="container-fluid" style="padding: 0 15px;">
+<section ng-if="!loading" class="container">
+    <div class="container-fluid" >
+        <span>Order By</span>
+        <select name="orderBy" ng-model="type" class="form-control order-by">
+            <option value="">Select</option>
+            <option value="size">Size</option>
+            <option value="price">Prize</option>
+            <option value="id">ID</option>
+        </select>
         <div class="row" scrolled="loadMoreAscii()">
             <div ng-repeat="row in products | orderBy:type:bool track by $index">
-                <div class="col-sm-4" style="background-color: #c2c2c2; border: 1px solid black; ">
+                <div class="col-sm-4 products">
                     <div>{{row.id}}</div>
                     <div>{{row.size | px}}</div>
                     <div>{{row.price | currency}}</div>
-                    <div>{{row.face}}</div>
+                    <div><span>{{row.face}}</span></div>
                     <div>{{row.date | date}}</div>
                 </div>
                 <div class="col-xs-4" ng-if="($index + 1) % 20 === 0">
