@@ -26,6 +26,15 @@ body {
     background-color: #c2c2c2;
     border: 1px solid black;
     margin: 10px;
+    padding: 0;
     width: 230px;
     height: 140px;
+}
+
+
+
+img.advertisement{
+    position: relative;
+    height: 140px;
+    width: 230px;
 }
