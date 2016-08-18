@@ -5,7 +5,6 @@ app.directive('dynamicSize',function ($window){
             dynamicSize:'@'
         },
         link: function (scope, elem, attrs){
-            console.log("font-size" +scope.dynamicSize + "px");
             elem.css('font-size', scope.dynamicSize + "px" );
         }
     }
