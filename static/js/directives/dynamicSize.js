@@ -1,11 +1,11 @@
-app.directive('dynamicSize',function ($window){
+app.directive('dynamicSize', function ($window) {
     return {
         restrict: 'A',
-        scope:{
-            dynamicSize:'@'
+        scope: {
+            dynamicSize: '@'
         },
-        link: function (scope, elem, attrs){
-            elem.css('font-size', scope.dynamicSize + "px" );
+        link: function (scope, elem, attrs) {
+            elem.css('font-size', scope.dynamicSize + "px");
         }
     }
 });

@@ -18,7 +18,9 @@ body {
 
 #page-title {
     font-size: 30px;
-    height: 40px;
+    font-weight: bold;
+    height: 50px;
+    line-height: 50px;
 }
 
 .products {
@@ -66,4 +68,8 @@ img.advertisement{
     position: relative;
     font-weight: bold;
     color: #FFF;
+}
+
+.finish-message{
+    line-height: 60px;
 }

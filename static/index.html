@@ -43,15 +43,14 @@
         </div>
     </div>
     <div class="footer" ng-if="loadingMore || finished">
-        <div ng-if="finished">
-           Not more Items
+        <div ng-if="finished" class="finish-message">
+            Not more Items
         </div>
-        <div ng-if="loadingMore" >
+        <div ng-if="loadingMore">
             <span>Loading... </span><img src="assets/Loading_icon.gif" class="spinner-footer"/>
         </div>
     </div>
 </div>
-
 </body>
 
 
