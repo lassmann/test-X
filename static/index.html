@@ -26,13 +26,13 @@
             <option value="id">ID</option>
         </select>
         <div class="row" scrolled="loadMoreAscii()">
-            <div ng-repeat="row in products | orderBy:type:bool track by $index">
+            <div ng-repeat="prod in products | orderBy:type:bool">
                 <div class="col-sm-3 products">
-                    <div>{{row.id}}</div>
-                    <div>{{row.size | px}}</div>
-                    <div>{{row.price | currency}}</div>
-                    <div><span dynamic-size="{{row.size}}">{{row.face}}</span></div>
-                    <div>{{row.date | date}}</div>
+                    <div>{{prod.id}}</div>
+                    <div>{{prod.size | px}}</div>
+                    <div>{{prod.price | currency}}</div>
+                    <div><span dynamic-size="{{prod.size}}">{{prod.face}}</span></div>
+                    <div>{{prod.date | date}}</div>
                 </div>
                 <div class="col-xs-3 products" ng-if="($index + 1) % 20 === 0">
                     <img class="advertisement" ng-src="/ad/?r={{ $index *  randomAdv}}" alt="advertisement">
