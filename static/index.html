@@ -13,11 +13,11 @@
     <div id="page-title">Discount Ascii Warehouse</div>
 </div>
 
-<section ng-if="loading">
-    <img src="assets/Loading_icon.gif" class="ajax-loader"/>
-</section>
-<section ng-if="!loading" class="container">
-    <div class="container-fluid" >
+<div class="container-fluid">
+    <div ng-if="loading">
+        <img src="assets/Loading_icon.gif" class="ajax-loader"/>
+    </div>
+    <div ng-if="!loading">
         <label for="orderBy">Order By</label>
         <select id="orderBy" ng-model="type" class="form-control order-by">
             <option value="">Select</option>
@@ -40,7 +40,8 @@
             </div>
         </div>
     </div>
-</section>
+</div>
+
 <footer>
     <div ng-if="finish"> Not More Items</div>
     <img ng-if="loadingMore" src="assets/Loading_icon.gif" class="ajax-loader"/>
