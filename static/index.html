@@ -42,12 +42,17 @@
             </div>
         </div>
     </div>
+    <div class="footer">
+
+        <div ng-if="finished">
+           Not more Items
+        </div>
+        <div ng-if="loadingMore" >
+            <span>Loading...</span><img src="assets/Loading_icon.gif" class="spinner-footer"/>
+        </div>
+    </div>
 </div>
 
-<footer>
-    <div ng-if="finish"> Not More Items</div>
-    <img ng-if="loadingMore" src="assets/Loading_icon.gif" class="ajax-loader"/>
-</footer>
 </body>
 
 

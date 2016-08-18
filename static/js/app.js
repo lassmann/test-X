@@ -5,7 +5,7 @@ var app = angular.module("ascii-warehouse", ['smart-table', 'ui.bootstrap', 'ang
         $scope.init = init;
         $scope.loadMoreAscii = loadMoreAscii;
         $scope.products = '';
-        $scope.finish = false;
+        $scope.finished = false;
         $scope.randomAdv = Math.floor(Math.random()*1000);
 
 
@@ -19,7 +19,8 @@ var app = angular.module("ascii-warehouse", ['smart-table', 'ui.bootstrap', 'ang
 
         function loadMoreAscii() {
             if ($scope.products.length >= 100) {
-                $scope.finish = true;
+                console.log("termine" );
+                $scope.finished = true;
             } else {
                 $scope.loadingMore = true;
                 Products.getProducts($scope.products.length, 10)

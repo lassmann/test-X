@@ -53,3 +53,15 @@ img.advertisement{
 .spinner{
     margin: auto;
 }
+
+.spinner-footer{
+    margin: auto;
+    height: 45px;
+    width: 45px;
+}
+.footer{
+    text-align: center;
+    background-color: #E2DBCC;
+    height: 50px;
+    position: relative;
+}
