@@ -19,8 +19,8 @@ var app = angular.module("ascii-warehouse", ['smart-table', 'ui.bootstrap', 'ang
 
         function loadMoreAscii() {
             if ($scope.products.length >= 100) {
-                console.log("termine" );
                 $scope.finished = true;
+                $scope.$apply();
             } else {
                 $scope.loadingMore = true;
                 Products.getProducts($scope.products.length, 10)

@@ -61,7 +61,9 @@ img.advertisement{
 }
 .footer{
     text-align: center;
-    background-color: #E2DBCC;
-    height: 50px;
+    background-color: #493F6C;
+    height: 60px;
     position: relative;
+    font-weight: bold;
+    color: #FFF;
 }
