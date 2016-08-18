@@ -1,19 +1,19 @@
+html{
+    height:100%;
+}
+
 body {
     background: url("../assets/image.jpg");
     background-repeat: no-repeat;
     background-position: center 100px;
     background-size: 650px 500px;
     font-family: 'Raleway', sans-serif;
+    height: 100%;
 }
 
 #navbar {
     text-align: center;
     background-color: #437DCC;
-}
-
-.loader {
-    background: url("../assets/Loading_icon.gif") no-repeat center center;
-    height: 100%;
 }
 
 #page-title {
@@ -39,4 +39,17 @@ img.advertisement{
 
 .order-by{
     width: 225px;
+}
+
+.container-fluid{
+    height: 100%;
+}
+
+.loader-container{
+    height: 100%;
+    display: flex;
+}
+
+.spinner{
+    margin: auto;
 }
