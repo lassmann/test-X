@@ -1,7 +1,6 @@
-app.factory('Products', function ($http, $q) {
+app.factory('Products', function ($http) {
     function getProducts(from, quantity) {
-        var deferred = $q.defer();
-        $http({
+        return $http({
             method: 'GET',
             url: '/api/products?limit=' + quantity + '&skip=' + from,
             transformResponse: function Transformer(raw) {
@@ -11,23 +10,18 @@ app.factory('Products', function ($http, $q) {
                     return (!str || 0 === str.length);
                 };
                 self.items = raw.split('\n');
-                angular.forEach(self.items, function Iterator(item) {
-                    if (!self.isEmptyString(item)) {
-                        var objectItem = JSON.parse(item);
-                        self.result.push(objectItem);
-                    }
-                });
-                return self.result;
+                return self.items
+                    .map(function (item){
+                        return self.isEmptyString(item)? null : JSON.parse(item);
+                    })
+                    .filter(function (item){
+                        return item;
+                    })
             }
-        }).then(function successCallback(products) {
-            deferred.resolve(products.data);
-        }, function errorCallback(err) {
-            deferred.reject(err.message);
-        });
-        return deferred.promise;
+        }).then(function(res) {return res.data})
     }
 
     return {
-        getProducts: getProducts,
+        getProducts: getProducts
     };
 });

@@ -24,10 +24,8 @@ var app = angular.module("ascii-warehouse", ['smart-table', 'ui.bootstrap', 'ang
                 $scope.loadingMore = true;
                 Products.getProducts($scope.products.length, 10)
                     .then(function (products) {
-                        products.forEach(function (prod) {
-                            $scope.loadingMore = false;
-                            $scope.products.push(prod);
-                        });
+                        $scope.products = $scope.products.concat(products);
+                        $scope.loadingMore = false;
                     });
             }
         }
